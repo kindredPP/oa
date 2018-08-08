@@ -9,7 +9,7 @@
 		"dev": "cross-env NODE_ENV=development webpack --cache --colors --profile --progress --hide-modules",
 		"app": "cross-env NODE_ENV=production webpack --cache --colors --profile --progress --hide-modules",
     "start": "cross-env NODE_ENV=development webpack-dev-server --cache --colors --profile --progress -d",
-    "precommit": "npm pre-commit"
+    "precommit": "lint-staged"
 	},
 	"husky": {
 		"hooks": {
@@ -24,7 +24,7 @@
 	},
 	"prettier": {
 		"trailingComma": "es5",
-		"printWidth": 128,
+		"printWidth": 80,
 		"useTabs": false,
 		"tabWidth": 2
 	},
