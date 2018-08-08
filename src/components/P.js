@@ -14,6 +14,7 @@ function HelloWorld({ greeting = "hello", greeted = '"World"', silent = false, o
       {greeting.endsWith(",") ? " " : <span style={{ color: "grey" }}>", "</span>}
       <em>{greeted}</em>
       <em>{greeted}</em>
+      <em>{greeted}</em>
       {silent ? "." : "!"}
     </div>
   );
