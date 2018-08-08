@@ -16,7 +16,7 @@
 		}
 	},
 	"lint-staged": {
-		"src/**/*.{js,jsx,vue,json,scss,less,css}": [
+		"src/**/*.{js,jsx,json,scss,less,css}": [
 			"prettier --write",
 			"git add"
 		]
@@ -24,8 +24,8 @@
 	"prettier": {
 		"trailingComma": "es5",
 		"printWidth": 128,
-		"useTabs": true,
-		"tabWidth": 4
+		"useTabs": false,
+		"tabWidth": 2
 	},
 	"devDependencies": {
 		"autoprefixer": "^8.6.5",
