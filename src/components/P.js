@@ -15,6 +15,8 @@ function HelloWorld({ greeting = "hello", greeted = '"World"', silent = false, o
       <em>{greeted}</em>
       <em>{greeted}</em>
       <em>{greeted}</em>
+      <em>{greeted}</em>
+      <em>{greeted}</em>
       {silent ? "." : "!"}
     </div>
   );
