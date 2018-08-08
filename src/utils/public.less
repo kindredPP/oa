@@ -1,0 +1,164 @@
+@font-face {
+	font-family: "Coding Number";
+	src: local("Menlo"), local("Monaco"), local("Verdana"), local("Consolas");
+	unicode-range: U+30-39;
+}
+@font-face {
+	font-family: "Monospaced Number";
+	src: local("Tahoma");
+	unicode-range: U+30-39;
+}
+@font-face {
+	font-family: "Chinese Quote";
+	src: local("PingFang SC"), local("SimSun");
+	unicode-range: U+2018, U+2019, U+201c, U+201d;
+}
+@-ms-viewport {
+	width: device-width;
+}
+html {
+	font-size: 10vw;
+}
+body {
+	/* 苹方 冬青黑体 微软雅黑 文泉驿微米黑(Ubuntu) 兰亭黑 微软黑体 无衬线字体 */
+	font-family: "Monospaced Number", "Chinese Quote", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", "Lantinghei SC", "Microsoft Sans Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	color: #666;
+	font-size: 12px;
+	line-height: 1.25;
+	-ms-overflow-style: scrollbar;
+	-webkit-overflow-scrolling: touch;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	/* 能够单独提升层的 css 属性有>根元素
+	* position: absolute/relative, +z-index(不为auto)
+	* display: flex|inline-flex +z-index(不为auto)
+	* position: fixed
+	* transform不为"none"
+	* -webkit-overflow-scrolling: touch
+	* opacity属性值小于 1 的元素
+	* mix-blend-mode属性值不为"normal"的元素
+	* filter值不为"none"的元素
+	* perspective值不为"none"的元素
+	* isolation属性被设置为"isolate"的元素
+	* will-change
+	* transform会导致position样式失效,比如fixed
+	*/
+}
+.code {
+	/* 等宽字体 常用字体颜色 #444 #666 #999 #bbb #ddd #eee #fff */
+	font-family: Menlo, Monaco, Verdana, Consolas, monospace;
+}
+.__ {
+	-webkit-appearance: none;
+	-webkit-touch-callout: none;
+	-webkit-transform: translateZ(0);
+	-webkit-tap-highlight-color: transparent;
+}
+.icon {
+	speak: none;
+	line-height: 1;
+	text-align: center;
+	font-size: inherit;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	display: inline-block;
+	vertical-align: baseline;
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+// ***
+@c-linkx: #409eff; // 链接文字颜色
+@c-linkh: #66b1ff; // 链接文字颜色hover
+@c-goodx: #67c23a; // 成功文字颜色
+@c-goodh: #85ce61; // 成功文字颜色hover
+@c-warnx: #e6a23c; // 警告文字颜色
+@c-warnh: #ebb563; // 警告文字颜色hover
+@c-errox: #f56c6c; // 危险文字颜色
+@c-erroh: #f78989; // 危险文字颜色hover
+// ***
+@c-btntx: #3ab4e2; // 右上角按钮文字颜色
+@c-btnth: #89d2ee; // 右上角按钮文字颜色hover
+@c-btnpx: #60c6cf; // 版块内按钮, 常规按钮, 文字链接色
+@c-btnph: #afe2e7; // 版块内按钮, 常规按钮hover
+@c-btnwx: #ff7373; // 示警按钮颜色
+@c-btnwh: #ffa7a0; // 示警按钮颜色hover
+// ***
+@c-numup: #059baa; // 数值增长颜色
+@c-numdn: #e74948; // 数值减少预警色
+@c-txtbg: #39c6cd; // header文字颜色, 选中背景色
+@c-altbg: #76bad5; // 醒目提示文字色, 个别板块背景色
+// ***
+@c-dashb: #10b2e0; // dashboard基本色 蓝色 blue
+@c-dashc: #60c6cf; // dashboard基本色 青色 cyan
+@c-dashr: #f35958; // dashboard基本色 红色 red
+@c-dashg: #55c69e; // dashboard基本色 绿色 green verdancy
+@c-dashp: #989cff; // dashboard基本色 紫色 purple violet
+@c-dasho: #ff9c4b; // dashboard基本色 橘色 orange
+// ***
+a, :focus {
+	outline: none;
+}
+a, .anchor, .danger {
+	cursor: pointer;
+	text-decoration: none;
+}
+a, .anchor {
+	color: @c-linkx;
+	&:hover {
+		color: @c-linkh;
+	}
+}
+.danger {
+	color: @c-errox;
+	&:hover {
+		color: @c-erroh;
+	}
+}
+.clear:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: "";
+	clear: both;
+	height: 0;
+}
+.limited {
+	cursor: not-allowed;
+	color: #999;
+	background-color: #ddd;
+}
+.disabled {
+	cursor: not-allowed;
+	color: #bbb;
+	border-color: #ccc;
+	background-color: #eee;
+}
+.scrollbar {
+	::-webkit-scrollbar {
+		width: 5px;
+		height: 5px;
+	}
+	::-webkit-scrollbar-thumb {
+		outline: none;
+		border-radius: 3px;
+		background-color: fade(#000, 20%);
+		&:hover {
+			background-color: fade(#000, 25%);
+		}
+	}
+	::-webkit-scrollbar-track {
+		background-color: fade(#000, 10%);
+		&:hover {
+			background-color: fade(#000, 15%);
+		}
+	}
+	::-webkit-scrollbar-track-piece {
+		background-color: transparent;
+	}
+}
